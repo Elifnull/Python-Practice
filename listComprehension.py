@@ -1,3 +1,8 @@
+
+import datetime
+
+dir(datetime)
+
 v = [2,-3,1]
 scalarV = [x*4 for x in v]
 
@@ -9,3 +14,11 @@ listB = [True,False,True,True]
 cartesList = [(x,y) for x in listA for y in listB]
 
 print(cartesList)
+
+#numbers practice
+
+x = 2 + 3j
+
+print(x.imag, x.real)
+
+

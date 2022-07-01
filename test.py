@@ -1,0 +1,3 @@
+import datetime
+
+dir(datetime)
