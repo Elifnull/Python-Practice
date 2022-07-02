@@ -57,4 +57,7 @@ else:
   elif value_difference == -1 or value_difference == 2:
     print("You lose")
 
-##added logic at begining to elimate values outside of the choices of 0,1,2.
+"""
+added logic at begining to elimate values outside of the choices of 0,1,2.
+will add try/except clause to improve code debugging
+"""
