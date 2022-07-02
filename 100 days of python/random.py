@@ -14,6 +14,7 @@ print(f"{names[random_index]} is going to buy the meal today!")
 
 """""
 random.choice() is an easier way of doing this 
+updated to have better and more readable code with better variables
 """
 
 # alternative method, and simpler
