@@ -45,8 +45,6 @@ else:
       return scissors
   
   
-  
-  
   human_output = rock_paper_sissors(int(human_choice))
   robot_output = rock_paper_sissors(robot_choice, "Robot")
   value_difference = human_choice - robot_choice
@@ -58,3 +56,5 @@ else:
     print("You win")
   elif value_difference == -1 or value_difference == 2:
     print("You lose")
+
+##added logic at begining to elimate values outside of the choices of 0,1,2.
