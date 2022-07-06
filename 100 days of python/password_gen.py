@@ -15,16 +15,16 @@ letter_array = []
 symbol_array = []
 number_array = []
 for letter in range(0,nr_letters):
-  letter_array.append(letters[random.randint(0,51)])
+    letter_array.append(letters[random.randint(0,51)])
 for symbol in range(0,nr_symbols):
-  symbol_array.append(symbols[random.randint(0,8)])
+    symbol_array.append(symbols[random.randint(0,8)])
 for number in range(0,nr_numbers):
-  number_array.append(numbers[random.randint(0,9)])
+    number_array.append(numbers[random.randint(0,9)])
 all_letters = letter_array + symbol_array + number_array
 password = ""
 
 for letter in all_letters:
-  password += letter
+    password += letter
 
 print(f'without shuffle: {password}')
 
@@ -34,5 +34,5 @@ random.shuffle(all_letters)
 shuffle_password = ""
 
 for letter in all_letters:
-  shuffle_password += letter
+    shuffle_password += letter
 print(f'Passowrd with Shuffle: {shuffle_password}')
