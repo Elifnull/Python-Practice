@@ -1,7 +1,7 @@
 students = [("Allen Anderson", "Computer Science"),
             ("Edgar Einstein", "Engineering"),
             ("Farrah Finn", "Fine Arts")]
-     
+    
 def add_new_student(students, name, major):
     students.append((name, major))
 
