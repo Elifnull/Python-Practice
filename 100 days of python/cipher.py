@@ -33,8 +33,8 @@ while restart_state:
 #Add some code so that the program continues to work even if the user enters a shift number greater than 26. 
 #Hint: Think about how you can use the modulus (%).
 
-  caesar(start_text=text, shift_amount=shift, cipher_direction=direction)
-  restart_program = input("Restart the program? Type \"Yes\" to continue\n").lower()
-  if restart_program == "no":
-    restart_state = False
-    print("Goodbye!")
+    caesar(start_text=text, shift_amount=shift, cipher_direction=direction)
+    restart_program = input("Restart the program? Type \"Yes\" to continue\n").lower()
+    if restart_program == "no":
+        restart_state = False
+        print("Goodbye!")
