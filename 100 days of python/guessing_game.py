@@ -1,6 +1,6 @@
 #Number Guessing Game Objectives:
 import random
-from replit import clear
+from replit import clear  ##replit only, but still inclued in codebase
 from art import Nlogo
 
 
