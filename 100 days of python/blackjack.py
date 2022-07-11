@@ -59,6 +59,7 @@
 
 #Hint 14: Ask the user if they want to restart the game. If they answer yes, clear the console and start a new game of blackjack and show the logo from art.py.
 from art import Blogo
+from replit import clear
 import random
 print(Blogo)
 def calculate_score(hand):
@@ -89,29 +90,39 @@ def deal_card():
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
     card = random.choice(cards)
     return card
-game_over_state = False
 
-user_cards = []
-computer_cards = []
+def blackjack():
+    game_over_state = False
 
-for step in range(2):
-    user_cards.append(deal_card())
-    computer_cards.append(deal_card())
+    user_cards = []
+    computer_cards = []
 
-while not game_over_state:
-    user_score = calculate_score(user_cards)
-    computer_score = calculate_score(computer_cards)
-    print(f" Your hand: {user_cards}, current Score: {sum(user_cards)}")
-    print(f" Computers first card: [{computer_cards[0]}]")
-    if user_score == 0 or computer_score == 0 or user_score > 21:
-        game_over_state = True
-    else:
-        deal_card = input("Type 'Y' to ge another card, type 'N' to pass:\n").lower()
-        if deal_card == "y":
-            user_cards.append(deal_card())
-        else:
+    for step in range(2):
+        user_cards.append(deal_card())
+        computer_cards.append(deal_card())
+
+    while not game_over_state:
+        user_score = calculate_score(user_cards)
+        computer_score = calculate_score(computer_cards)
+        print(f" Your hand: {user_cards}, current Score: {sum(user_cards)}")
+        print(f" Computers first card: [{computer_cards[0]}]")
+        if user_score == 0 or computer_score == 0 or user_score > 21:
             game_over_state = True
+        else:
+            deal_card = input("Type 'Y' to ge another card, type 'N' to pass:\n").lower()
+            if deal_card == "y":
+                user_cards.append(deal_card())
+            else:
+                game_over_state = True
 
-while computer_score != 0 and computer_score < 17:
-    computer_cards.append(deal_card())
-    computer_score = calculate_score(computer_cards)
+    while computer_score != 0 and computer_score < 17:
+        computer_cards.append(deal_card())
+        computer_score = calculate_score(computer_cards)
+
+    print(compare(user_score, computer_score))
+    continue_state = input("Do you want to play again? 'Y' or 'N'\n")
+    if continue_state == "y":
+        clear()
+        blackjack()
+    else:
+        clear()
