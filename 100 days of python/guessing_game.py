@@ -4,8 +4,6 @@ from replit import clear
 from art import logo
 
 
-
-
 def number_guess():
   print(logo)
   print("I'm guessing a number between 1 and 100")
