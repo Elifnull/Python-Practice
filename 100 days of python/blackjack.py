@@ -61,69 +61,11 @@
 from art import logo
 import random
 print(logo)
-cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-player_hand = []
-computer_hand = []
 
-end_state = False
-def ace_convert(hand):
-  if sum(hand) > 21:
-    for card in hand:
-      if card == 11:
-        card = 1
-  return hand
-def blackjack(hand):
-  ace_convert(hand)
-  if sum(hand) == 21:
-    if hand == player_hand:
-      print("Congratulations You Win")
-    else:
-      print("You Loose!")
-  elif sum(hand) > 21:
-    if hand == player_hand:
-      print("You Loose")
-    else:
-      print(f"You Win! Computer hand: {computer_hand}, score: {sum(computer_hand)}")
-def draw_cards(hand,number):
-  for steps in range(number):
-    drawn = random.choice(cards)
-    hand.append(drawn)
-  return hand
+def deal_card():
+    cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+    card = random.choice(cards)
+    return card
 
-
-
-
-draw_cards(player_hand,2)
-draw_cards(computer_hand,2)
-
-blackjack(player_hand)
-blackjack(computer_hand)
-while not end_state:
-  print(f"Your hand: {player_hand} Score: {sum(player_hand)}")
-  print(f"computer has [{computer_hand[0]}] card.")
-  if sum(player_hand) == 21 or sum(computer_hand) == 21:
-    end_state = True
-    break
-  draw_card = input("Do you want to draw a card? 'Y' or 'N'\n").lower()
-  if draw_card == "y":
-    draw_cards(player_hand,1)
-    blackjack(player_hand)
-    if sum(player_hand) > 21:
-      end_state = True
-      break
-  if sum(computer_hand) < 17:
-    draw_cards(computer_hand,1)
-    blackjack(computer_hand)
-    if sum(computer_hand) > 21:
-      end_state = True
-
-  if sum(player_hand) > sum(computer_hand):
-    end_state = True
-    print(f"you win your score:{sum(player_hand)}")
-  elif sum(player_hand) < sum(computer_hand):
-    print(f"you loose computer score:{sum(computer_hand)}")
-    print(f"your hand: {player_hand} and your score {sum(player_hand)}")
-    end_state = True
-  else:
-    print(f"Draw both scored: {sum(player_hand)}")
-    
+user_cards = []
+computer_cards = []
