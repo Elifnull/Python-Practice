@@ -61,7 +61,7 @@
 from art import logo
 import random
 print(logo)
-def calulate_score(hand):
+def calculate_score(hand):
     '''calculates score, if > 21 changes ace to value 1'''
     if sum(hand) == 21 and len(hand) ==2:
         return 0
@@ -82,5 +82,7 @@ for step in range(2):
     user_cards.append(deal_card())
     computer_cards.append(deal_card())
 
+user_score = calculate_score(user_cards)
+computer_score = calculate_score(computer_cards)
 
 
