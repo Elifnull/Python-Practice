@@ -58,9 +58,9 @@
 #Hint 13: Create a function called compare() and pass in the user_score and computer_score. If the computer and user both have the same score, then it's a draw. If the computer has a blackjack (0), then the user loses. If the user has a blackjack (0), then the user wins. If the user_score is over 21, then the user loses. If the computer_score is over 21, then the computer loses. If none of the above, then the player with the highest score wins.
 
 #Hint 14: Ask the user if they want to restart the game. If they answer yes, clear the console and start a new game of blackjack and show the logo from art.py.
-from art import logo
+from art import Blogo
 import random
-print(logo)
+print(Blogo)
 def calculate_score(hand):
     '''calculates score, if > 21 changes ace to value 1'''
     if sum(hand) == 21 and len(hand) ==2:
@@ -74,6 +74,7 @@ def deal_card():
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
     card = random.choice(cards)
     return card
+game_over_state = False
 
 user_cards = []
 computer_cards = []
@@ -84,5 +85,7 @@ for step in range(2):
 
 user_score = calculate_score(user_cards)
 computer_score = calculate_score(computer_cards)
-
-
+print(f" Your hand: {user_cards}, current Score: {sum(user_cards)}")
+print(f" Computers first card: [{computer_cards[0]}]")
+if user_score == 0 or computer_score == 0 or user_score > 21:
+    game_over_state = True
