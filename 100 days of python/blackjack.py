@@ -62,6 +62,7 @@ from art import logo
 import random
 print(logo)
 def calulate_score(hand):
+    '''calculates score, if > 21 changes ace to value 1'''
     if sum(hand) == 21 and len(hand) ==2:
         return 0
     if 11 in hand and sum(hand) > 21:
