@@ -69,6 +69,21 @@ def calculate_score(hand):
         hand.remove(11)
         hand.append(1)
     return sum(hand)
+def compare(user_score, computer_score):
+    if user_score == computer_score:
+        return "Draw"
+    elif computer_score == 0:
+        return "Lose, opponenet has Blackjack"
+    elif user_score == 0:
+        return "Win with Blackjack"
+    elif user_score > 21:
+        return "You went over. You lose!"
+    elif computer_score >21:
+        return "You win! Computer went over"
+    elif user_score > computer_score:
+        return "You win!"
+    else:
+        return "You Lose!"
 def deal_card():
     '''returns random card from deck'''
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
@@ -96,3 +111,7 @@ while not game_over_state:
             user_cards.append(deal_card())
         else:
             game_over_state = True
+
+while computer_score != 0 and computer_score < 17:
+    computer_cards.append(deal_card())
+    computer_score = calculate_score(computer_cards)
