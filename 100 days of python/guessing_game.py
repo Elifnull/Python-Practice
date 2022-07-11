@@ -1,11 +1,11 @@
 #Number Guessing Game Objectives:
 import random
 from replit import clear
-from art import logo
+from art import Nlogo
 
 
 def number_guess():
-  print(logo)
+  print(Nlogo)
   print("I'm guessing a number between 1 and 100")
   print("Are you ready to guess?")
   
