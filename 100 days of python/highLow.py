@@ -1,6 +1,6 @@
 import random
 from replit import clear
-from art import logo, vs
+from art import Hlogo, vs
 from game_data import data
 
 def highLow():
@@ -10,7 +10,7 @@ def highLow():
     score = 0
     
     while game_continue:
-        print(logo)
+        print(Hlogo)
         print(f'Compare A: {choiceA["name"]}, {choiceA["description"]}, from {choiceA["country"]}')
         print(choiceA['follower_count'])
         print(vs)
