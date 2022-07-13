@@ -23,14 +23,14 @@ while continue_state:
 
     def return_amount(payment, cost_of_drink):
         """Takes in payment and cost, calculates refund """
-        return payment - cost_of_drink
+        return round(payment - cost_of_drink, 2)
 
 
     def resource_deduction(drink):
         """Takes out the resource for drink"""
         for ingredient in drink["ingredients"]:
             resources[ingredient] -= drink['ingredients'][ingredient]
-            print(f"coffee resources: {resources[ingredient]} vs drink cost: {drink['ingredients'][ingredient]}")
+    # print(f"coffee resources: {resources[ingredient]} vs drink cost: {drink['ingredients'][ingredient]}")
 
 
     def enough_ingredients(drink):
@@ -64,8 +64,10 @@ while continue_state:
             pennies_inserted = int(input('how many pennies? '))
 
             total_paid = coin_to_cost_conversion(quarters_inserted, dimes_inserted, nickles_inserted, pennies_inserted)
+            round(total_paid, 2)
             remainder = total_paid - cost
-            print(f"total paid: ${total_paid}, total due: ${cost}, remainder: ${total_paid - cost}")
+            round(remainder, 2)
+            print(f"total paid: ${total_paid}, total due: ${cost}")
 
             # TODO 2
             # calculate if payment is enough
