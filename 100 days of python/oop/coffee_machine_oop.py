@@ -17,6 +17,5 @@ while not end_state:
         end_state = True
     else:
         drink_choice = menu.find_drink(drink)
-        if coffee_machine.is_resource_sufficient(drink_choice):
-            money_machine.make_payment(drink_choice.cost)
+        if coffee_machine.is_resource_sufficient(drink_choice) and money_machine.make_payment(drink_choice.cost):
             coffee_machine.make_coffee(drink_choice)
