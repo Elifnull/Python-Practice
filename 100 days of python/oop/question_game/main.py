@@ -4,6 +4,7 @@ from quiz_brain import QuizBrain
 
 question_bank = []
 for index, content in enumerate(question_data):
+    """loop added question objects into list, each index is new question object"""
     question_text = content["text"]
     question_answer = bool(content["answer"])
     new_question = Question(question_text, question_answer)
