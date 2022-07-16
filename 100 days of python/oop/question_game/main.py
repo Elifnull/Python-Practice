@@ -6,7 +6,7 @@ question_bank = []
 for index, content in enumerate(question_data):
     """loop added question objects into list, each index is new question object"""
     question_text = content["text"]
-    question_answer = bool(content["answer"])
+    question_answer = content["answer"].lower()
     new_question = Question(question_text, question_answer)
     question_bank.append(new_question)
 
