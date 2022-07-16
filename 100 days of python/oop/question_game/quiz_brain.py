@@ -18,5 +18,9 @@ class QuizBrain:
     def check_answer(self, question, answer):
         if question == answer:
             self.score += 1
+            print("You got it right!")
         else:
             self.score += 0
+            print("You got it wrong")
+        print(f'Your score: {self.score}/{self.question_number}')
+        
