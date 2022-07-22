@@ -17,11 +17,15 @@ tim.shape("turtle")
 tim.speed("fastest")
 turn_angle = 0
 
-for _ in range(0, 360, 5):
-    tim.color(random_colour(), random_colour())
-    tim.rt(5)
-    tim.circle(100)
 
+def draw_spirograph(gap):
+    for _ in range(0, 360, gap):
+        tim.color(random_colour(), random_colour())
+        tim.rt(gap)
+        tim.circle(100)
+
+
+draw_spirograph(5)
 
 screen = Screen()
 screen.screensize(2000, 1500)
