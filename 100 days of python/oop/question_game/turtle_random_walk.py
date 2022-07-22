@@ -11,7 +11,7 @@ for _ in range(0, 100):
     turn_angle = 90 * turn_position_number
     tim.color(random.choice(turtle_colors), random.choice(turtle_colors))
     tim.rt(turn_angle)
-    tim.fd(100)
+    tim.fd(30)
 
 screen = Screen()
 screen.screensize(2000, 1500)
