@@ -3,7 +3,7 @@ import random
 
 tim = Turtle()
 tim.shape("turtle")
-turtle_colors = ["lime green", "yellow", "purple", "cyan", "orange", "pink", "skyblue", "navy blue"]
+turtle_colors = ["DarkOrchid", "yellow", "purple", "CornflowerBlue", "orange", "pink", "skyblue", "navy blue", "DeepSkyBlue", "SlateGray", "SeaGreen"]
 for num in range(3, 11):
     degree = 360 / num
     turns = 360/degree
