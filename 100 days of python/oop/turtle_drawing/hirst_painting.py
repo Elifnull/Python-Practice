@@ -21,11 +21,20 @@ hi_turtle = Turtle()
 
 
 hi_turtle.speed("fastest")
-for num in range(100):
-    hi_turtle.color(random.choice(color_array))
-    hi_turtle.circle(100)
-    hi_turtle.rt(5)
 
+
+def hirst_painting(height, width):
+    for num in range(height):
+        hi_turtle.penup()
+        y_coordinate_value = (num * 50 -220)
+        hi_turtle.sety(y_coordinate_value)
+        for number in range(width):
+            hi_turtle.setx((number * 50) - 220)
+            hi_turtle.dot(20, random.choice(color_array))
+
+
+hirst_painting(10, 10)
+hi_turtle.hideturtle()
 screen = Screen()
 screen.exitonclick()
 
