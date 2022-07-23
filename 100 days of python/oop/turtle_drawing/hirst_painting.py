@@ -34,7 +34,8 @@ def hirst_painting(height, width):
 
 
 hirst_painting(10, 10)
-hi_turtle.hideturtle()
+
+hi_turtle.hideturtle() # hides turtle at the end
 screen = Screen()
 screen.exitonclick()
 
