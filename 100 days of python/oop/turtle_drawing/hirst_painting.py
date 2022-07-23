@@ -23,7 +23,8 @@ hi_turtle = Turtle()
 hi_turtle.speed("fastest")
 
 
-def hirst_painting(height, width):
+def hirst_painting(height, width): #refactored program so that it works in x,y coordinates instead of using set heading
+    """accepts Height and width to determin hirst painting parameters"""
     for num in range(height):
         hi_turtle.penup()
         y_coordinate_value = (num * 50 -220)
